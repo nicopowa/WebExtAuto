@@ -20,33 +20,35 @@ disable Chrome debug message :
 Extended from WebExtBase : https://github.com/nicopowa/WebExtBase
 	
 	
-##AutoContentScript methods :
+## AutoContentScript methods :
 
-@method click: click element
+```
+click: click element
 @param {Node} element: html node
 @param {Function} callback: method called after async click
 @return void
 
-@method scroll: scroll element
+scroll: scroll element
 @param {Node} element: html node
 @param {number} deltaY: scroll pixels (positive or negative)
 @param {Function} callback: method called after async scroll
 @return void
 
-@method type: type text on keyboard
+type: type text on keyboard
 @param {string} text: "some text to type"
 @param {Function} callback: method called after async type
 @return void
 
-@method press: press single key
+press: press single key
 @param {string} key: "a" "\r"
 @param {Function} callback: method called after async key press
 @return void
-
+```
 	
-##Observer methods :
+## Observer methods :
 
-@method watch: watch element, options see https://developer.mozilla.org/fr/docs/Web/API/MutationObserver#MutationObserverInit
+```
+watch: watch element, options see https://developer.mozilla.org/fr/docs/Web/API/MutationObserver#MutationObserverInit
 @param {Node} element:
 @param {(undefined|{attributeFilter: (Array<string>|undefined), attributeOldValue: (boolean|undefined), attributes: (boolean|undefined), characterData: (boolean|undefined), characterDataOldValue: (boolean|undefined), childList: (boolean|undefined), subtree: (boolean|undefined)})} options:
 @param {Function} callback: method called when watched element mutates
@@ -60,21 +62,24 @@ Extended from WebExtBase : https://github.com/nicopowa/WebExtBase
 		// {object} mutation : mutation details
 	}
 
-@method unwatch: stop plz
+unwatch: stop plz
 @param {number} watchid: returned by watch() call
 @return {void}
-	
+```
 
-##Lazy methods :
+## Lazy methods :
 
-@method delay: delay method call
+```
+delay: delay method call
 @param {Function} method: the method
 @param {number} ms: how many milliseconds
 @param {...*} var_args: any number of arguments
 @return {Number} setTimeout identifier
 
-@method hooman: delay alias with predefined delays
+
+hooman: delay alias with predefined delays
 @param {Function} method: the method
 @param {string} level: god < jedi < short < medium < long  / defaults to medium
 @param {...*} var_args: any number of arguments
 @return {Number} setTimeout identifier
+```
