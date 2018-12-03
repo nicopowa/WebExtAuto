@@ -1,4 +1,6 @@
-# WebExtAuto
+#WebExtAuto
+Nico Pr
+https://nicopr.fr/chromextensions
 
 install :
 
@@ -11,6 +13,9 @@ disable Chrome debug message :
 	- navigate to chrome://flags
 	- enable "silent debugging"
 	- restart Chrome
+	
+
+Extended from WebExtBase : https://github.com/nicopowa/WebExtBase
 	
 	
 AutoContentScript methods :
