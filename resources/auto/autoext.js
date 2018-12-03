@@ -1,9 +1,14 @@
 /**
-*
-* !!!! Windows NTFS JUNCTION from WebExtBase\resources\base
-* mklink /j shortcutName targetFileOrDir
-*
+* AutoExt
+* Nico Pr
+* https://nicopr.fr/chromextensions
 */
+
+/*
+* GIT Windows NTFS JUNCTION from WebExtBase\resources\base
+* mklink /j shortcutName targetFileOrDir
+*/
+
 
 /**
 * @nocollapse
