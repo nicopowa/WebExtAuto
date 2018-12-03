@@ -81,7 +81,7 @@ class CustomExtensionContent extends AutoContentScript {
 		//return true; // to enable async callback
 	}
 	
-	static fromPopup(type, message, callback) { // message from popup script		
+	static fromPopup(type, message, callback) { // message from popup script
 		if(super.fromPopup(type, message, callback)) return true;
 		
 		//callback(); // ack to background, here or in async handler

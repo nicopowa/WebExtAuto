@@ -414,8 +414,9 @@ class AutoContentScript extends ExtensionContentScript {
 	
 	/**
 	* @method click: click element
-	* @param {Node} element:
-	* @param {Function} callback:
+	* @param {Node} element: html node
+	* @param {Function} callback: method called after async click
+	* @return void
 	*/
 	static click(element, callback) {
 		/*
@@ -463,9 +464,10 @@ class AutoContentScript extends ExtensionContentScript {
 	
 	/**
 	* @method scroll: scroll element
-	* @param {Node} element:
+	* @param {Node} element: html node
 	* @param {number} deltaY: scroll pixels (positive or negative)
-	* @param {Function} callback:
+	* @param {Function} callback: method called after async scroll
+	* @return void
 	*/
 	static scroll(element, deltaY, callback) {
 		trace("scroll", element.nodeName, deltaY);
@@ -500,8 +502,9 @@ class AutoContentScript extends ExtensionContentScript {
 	
 	/**
 	* @method type: type text on keyboard
-	* @param {string} text:
-	* @param {Function} callback:
+	* @param {string} text: "some text to type"
+	* @param {Function} callback: method called after async type
+	* @return void
 	*/
 	static type(text, callback) {
 		trace("type", "\"" + text + "\"");
@@ -510,8 +513,9 @@ class AutoContentScript extends ExtensionContentScript {
 	
 	/**
 	* @method press: press single key
-	* @param {string} key:
-	* @param {Function} callback:
+	* @param {string} key: "a" "\r"
+	* @param {Function} callback: method called after async key press
+	* @return void
 	*/
 	static press(key, callback) {
 		this.comm.toBackground("press", key, die);
@@ -668,8 +672,8 @@ class Observer {
 	* @method watch: watch element, options see https://developer.mozilla.org/fr/docs/Web/API/MutationObserver#MutationObserverInit
 	* @param {Node} element:
 	* @param {(undefined|{attributeFilter: (Array<string>|undefined), attributeOldValue: (boolean|undefined), attributes: (boolean|undefined), characterData: (boolean|undefined), characterDataOldValue: (boolean|undefined), childList: (boolean|undefined), subtree: (boolean|undefined)})} options:
-	* @param {Function} callback:
-	* @return {number|void}
+	* @param {Function} callback: method called when watched element mutates
+	* @return {number|void} watch identifier
 	*/
 	static watch(element, options, callback) {
 		if(element.hasAttribute("data-watch")) return trace("already on watch", element.getAttribute("data-watch"));
@@ -684,7 +688,7 @@ class Observer {
 	
 	/**
 	* @method unwatch: stop plz
-	* @param {number} watchid:
+	* @param {number} watchid: returned by watch() call
 	* @return {void}
 	*/
 	static unwatch(watchid) {
@@ -792,20 +796,22 @@ class Observer {
 class Lazy {
 	
 	/**
-	* @method delay: 
-	* @param {Function} method: 
-	* @param {number} ms: 
-	* @param {...*} var_args
+	* @method delay: delay method call
+	* @param {Function} method: the method
+	* @param {number} ms: how many milliseconds
+	* @param {...*} var_args: any number of arguments
+	* @return {Number} setTimeout identifier
 	*/
 	static delay(method, ms, var_args) {
 		return setTimeout(method.bind.apply(method, [null].concat(Array.prototype.slice.call(arguments, 2))), ms);
 	}
 	
 	/**
-	* @method hooman: 
-	* @param {Function} method:
-	* @param {string} level:
-	* @param {...*} var_args
+	* @method hooman: delay alias with predefined delays
+	* @param {Function} method: the method
+	* @param {string} level: god < jedi < short < medium < long  / defaults to medium
+	* @param {...*} var_args: any number of arguments
+	* @return {Number} setTimeout identifier
 	*/
 	static hooman(method, level, var_args) {
 		let delays = {
