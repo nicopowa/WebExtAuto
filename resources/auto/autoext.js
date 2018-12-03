@@ -1,4 +1,10 @@
 /**
+*
+* !!!! Windows NTFS JUNCTION from WebExtBase\resources\base
+*
+*/
+
+/**
 * @nocollapse
 * @extends {ExtensionBackgroundScript}
 */
