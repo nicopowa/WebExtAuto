@@ -55,17 +55,18 @@
 			
 				"*://localhost/",
 				
-				"*://twitter.com/",
+				"*://*.twitter.com/",
 				
-				"*://www.google.fr/",
+				"*://*.google.com/*",
+				"*://*.google.fr/*",
 				
-				"*://fr.yahoo.com/",
+				"*://*.yahoo.com/",
 				
-				"*://en.wikipedia.org/wiki/Main_Page",
+				"*://*.wikipedia.org/*",
 				
-				"*://www.qwant.com/",
+				"*://*.qwant.com/*",
 				
-				"*://www.instagram.com/"
+				"*://*.instagram.com/"
 				
 			],
 			
@@ -104,19 +105,20 @@
 		
 		"matches": [ // https://developer.chrome.com/apps/match_patterns
 		
-			"*://localhost/*",
-			
-			"*://twitter.com/*",
-			
-			"*://www.google.fr/*",
-			
-			"*://fr.yahoo.com/*",
-			
-			"*://en.wikipedia.org/*",
-			
-			"*://www.qwant.com/*",
-			
-			"*://www.instagram.com/*"
+			"*://localhost/",
+				
+				"*://*.twitter.com/",
+				
+				"*://*.google.com/*",
+				"*://*.google.fr/*",
+				
+				"*://*.yahoo.com/",
+				
+				"*://*.wikipedia.org/*",
+				
+				"*://*.qwant.com/*",
+				
+				"*://*.instagram.com/"
 			
 		],
 		

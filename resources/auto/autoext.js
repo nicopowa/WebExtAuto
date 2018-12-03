@@ -1,6 +1,7 @@
 /**
 *
 * !!!! Windows NTFS JUNCTION from WebExtBase\resources\base
+* mklink /j shortcutName targetFileOrDir
 *
 */
 
